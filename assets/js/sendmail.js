@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Collect form data
     var name = document.querySelector('input[name="name"]').value;
     var email = document.querySelector('input[name="email"]').value;
-    // var phone = document.querySelector('input[name="phone"]').value;
+    var phone = document.querySelector('input[name="phone"]').value;
     var subject = document.querySelector('input[name="subject"]').value;
     var message = document.querySelector('textarea[name="message"]').value;
   
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var templateParams = {
       name: name,
       email: email,
-    //   phone: phone,
+      phone: phone,
       subject: subject,
       message: message,
     };
