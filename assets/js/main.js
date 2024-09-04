@@ -226,4 +226,42 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  document.getElementById('submit-btn').addEventListener('click', function () {
+    // Collect form data
+    var name = document.querySelector('input[name="name"]').value;
+    var email = document.querySelector('input[name="email"]').value;
+    var subject = document.querySelector('input[name="subject"]').value;
+    var message = document.querySelector('textarea[name="message"]').value;
+    var errorMessage = document.querySelector('.error-message');
+
+    // Validation: Check if all fields are filled
+    if (!name || !email || !subject || !message) {
+        errorMessage.textContent = "Please check the errors.";
+        errorMessage.style.display = 'block';
+        return; // Stop execution if validation fails
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Check if email is valid
+    if (!emailPattern.test(email)) {
+        errorMessage.textContent = "Please enter a valid email address.";
+        errorMessage.style.display = 'block';
+        return; // Stop execution if email validation fails
+    }
+
+    errorMessage.style.display = 'none'; // Hide error message if validation passes
+
+    // Create the mailto link
+    var mailtoLink = 'mailto:manvith.gundeti@gmail.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Message: ' + message
+        );
+
+    // Open the mail client
+    window.location.href = mailtoLink;
+});
+
 })();
