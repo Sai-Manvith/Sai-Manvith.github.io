@@ -1267,6 +1267,31 @@ section,
   color: var(--accent-color);
 }
 
+.skills.section .list-icons {
+  padding: 0;
+  margin: 0 auto;
+  text-align: center; /* Center-aligns the icons */
+}
+
+.skills.section .list-icons li {
+  display: inline-block;
+  margin: 10px 15px; /* Adjusts spacing between icons */
+}
+
+.skills.section .list-icons i {
+  font-size: 48px; /* Adjusts icon size */
+  vertical-align: middle; /* Aligns icons vertically */
+  line-height: 1;
+  color: #333; /* Changes icon color */
+  position: relative;
+  top: -2px; /* Fine-tunes the vertical position */
+  transition: color 0.3s ease; /* Adds a hover effect */
+}
+
+.skills.section .list-icons i:hover {
+  color: #007bff; /* Changes color on hover */
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
